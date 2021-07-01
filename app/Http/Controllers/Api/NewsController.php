@@ -20,6 +20,8 @@ class NewsController extends Controller
     }
 
     public function search(Request $request){
-        
+        $searchKeyword = $request->keyword;
+        $news = News::where('title', 'like', '%' . $searchKeyword . '%')->get();
+        return response()->json($news, 200);
     }
 }
