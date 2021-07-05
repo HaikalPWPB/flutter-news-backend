@@ -24,4 +24,4 @@ Route::get('/dashboard/news/create', [NewsController::class, 'createView']);
 Route::post('/dashboard/news/create', [NewsController::class, 'create']);
 Route::get('/dashboard/news/edit/{id}', [NewsController::class, 'editView']);
 Route::post('/dashboard/news/edit/{id}', [NewsController::class, 'edit']);
-Route::post('/dsahboard/news/delete/{id}', [NewsController::class, 'delete']);
+Route::get('/dashboard/news/delete/{id}', [NewsController::class, 'delete']);

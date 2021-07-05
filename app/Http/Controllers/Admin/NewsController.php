@@ -27,7 +27,7 @@ class NewsController extends Controller
         $news->content = $request->input('content');
         $news->save();
 
-        return redirect('/dashboard/news')->with('sucess', 'News has created successfully!');
+        return redirect('/dashboard/news')->with('success', 'News has created successfully!');
     }
 
     public function editView($id ,Request $request){

@@ -27,10 +27,10 @@ Route::group(['prefix' => 'v1'], function() {
     Route::middleware(['auth:api'])->group(function () {        
         Route::get('/logout', [UserController::class, 'logout']);
         Route::get('/profile', [UserController::class, 'profile']);
+        Route::get('/news', [NewsController::class, 'getAllNews']);
+        Route::post('/news/search', [NewsController::class, 'search']);
+        Route::get('/news/{id}', [Newscontroller::class, 'getDetailNews']);
     });
 
-    Route::get('/news', [NewsController::class, 'getAllNews']);
-    Route::get('/news/{id}', [Newscontroller::class, 'getDetailNews']);
-    Route::post('/news/search', [NewsController::class, 'search']);
 });
 

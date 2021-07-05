@@ -14,7 +14,7 @@
                 <textarea name="content">{{ $news->content }}</textarea>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit">Create News</button>
+                <button class="btn btn-primary btn-block" type="submit">Edit News</button>
             </div>
         </form>
     </div>
