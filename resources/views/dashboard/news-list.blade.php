@@ -17,7 +17,12 @@
                 <th>Updated at</th>
                 <th colspan="2">Action</th>
             </tr>
-            <?php $counter = 1; ?>
+            <?php 
+                 $counter = 1;
+                if ($news->currentPage() > 1) {
+                    $counter += ($news->currentPage() - 1) * 10;
+                }
+            ?>
             @foreach ($news as $n)
                 <tr>
                     <td>{{ $counter }}</td>
