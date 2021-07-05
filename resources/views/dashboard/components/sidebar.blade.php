@@ -26,7 +26,7 @@
               <li class="nav-item">
                 <a href="{{ url('/dashboard/news') }}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
+                  <p>News List</p>
                 </a>
               </li>
             </ul>
