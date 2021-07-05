@@ -3,7 +3,7 @@
 @section('content')
     <div class="container p-5">
         <h1 class="text-center">Create News</h1>
-        <form action="/dashboard/news/create" method="POST">
+        <form action="{{ url('/dashboard/news/create') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="title">Title</label>
