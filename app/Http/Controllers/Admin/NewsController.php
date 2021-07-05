@@ -13,7 +13,7 @@ class NewsController extends Controller
     }
 
     public function list(){
-        $data['news'] = News::all();
+        $data['news'] = News::simplePaginate(10);
         return view('dashboard.news-list', $data);
     }
 

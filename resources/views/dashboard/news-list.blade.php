@@ -30,5 +30,6 @@
             <?php $counter++ ?>
             @endforeach
         </table>
+        {{ $news->links() }}
     </div>
 @endsection

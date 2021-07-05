@@ -18,13 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [NewsController::class, 'index']);
-Route::get('/dashboard/news', [Newscontroller::class, 'list']);
-Route::get('/dashboard/news/create', [NewsController::class, 'createView']);
-Route::post('/dashboard/news/create', [NewsController::class, 'create']);
-Route::get('/dashboard/news/edit/{id}', [NewsController::class, 'editView']);
-Route::post('/dashboard/news/edit/{id}', [NewsController::class, 'edit']);
-Route::get('/dashboard/news/delete/{id}', [NewsController::class, 'delete']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [NewsController::class, 'index']);
+    Route::get('/dashboard/news', [Newscontroller::class, 'list']);
+    Route::get('/dashboard/news/create', [NewsController::class, 'createView']);
+    Route::post('/dashboard/news/create', [NewsController::class, 'create']);
+    Route::get('/dashboard/news/edit/{id}', [NewsController::class, 'editView']);
+    Route::post('/dashboard/news/edit/{id}', [NewsController::class, 'edit']);
+    Route::get('/dashboard/news/delete/{id}', [NewsController::class, 'delete']);
+});
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::redirect('/home', '/dashboard');
